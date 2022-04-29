@@ -1,0 +1,52 @@
+{
+    "name": "TouchControls",
+    "maps": [
+        {
+            "name": "Touch",
+            "id": "b03f76df-6e8e-4373-a07b-32289f375d6b",
+            "actions": [
+                {
+                    "name": "TouchH",
+                    "type": "PassThrough",
+                    "id": "231604d2-caa2-4f57-bd88-b7fdeca11c96",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold"
+                },
+                {
+                    "name": "TouchInput",
+                    "type": "PassThrough",
+                    "id": "894e584f-7a03-4965-9b3a-87134e9810b4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Hold"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "46ddbdfd-7ddb-450d-8c08-15ffec8fa4d2",
+                    "path": "<Touchscreen>/delta/x",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchH",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3ccb3bde-00aa-4d3f-8db7-bc808fee982f",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
