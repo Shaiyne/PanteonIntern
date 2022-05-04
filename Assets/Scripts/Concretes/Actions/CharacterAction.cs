@@ -35,7 +35,7 @@ namespace Panteon.Actions
                 anim.SetBool("FinishBool", true);
                 GameManager.Instance.FinishGameMethod(true);
                 InputManager.Instance.OnStartTouch -= playerController.Move;
-                transform.GetChild(0).transform.GetComponent<CameraController>().enabled = true;
+                transform.GetChild(0).transform.GetComponent<CameraMovement>().enabled = true;
             }
             if (other.transform.tag == "deathTag")
             {

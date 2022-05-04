@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Concretes\Actions\CharacterAction.cs" />
     <Compile Include="Assets\Assets\Paintz Free\Demo\Scripts\RandomRotate.cs" />
     <Compile Include="Assets\Assets\Paintz Free\Scripts\CollisionPainter.cs" />
+    <Compile Include="Assets\Scripts\Concretes\Movements\CameraMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\Paintz Free\Scripts\Resources\Shaders\Utility\PaintPos.shader" />
