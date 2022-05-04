@@ -22,7 +22,6 @@ namespace Panteon.Controllers
         {
             _verticalMove = new VerticalMove(this);
             _horizontalMove = new HorizontalMove(this);
-            OppoHorizontalMove(0.7f);
         }
 
         private void Update()
@@ -35,17 +34,11 @@ namespace Panteon.Controllers
             transform.position = new Vector3(transform.position.x, transform.position.y, positionZ);
             if (GameManager.Instance.finishGame == true)
             {
-                if (GameManager.Instance.opponentWin)
+                OpponentMovementEnding();
+                if (GameManager.Instance.opponentWin==false)
                 {
-                    OpponentMovementEnding();
-                    Debug.Log("girdi");
-                }
-                else
-                {
-                    OpponentMovementEnding();
                     Destroy(gameObject);
-                }
-                
+                }              
             }
         }
 
@@ -60,13 +53,9 @@ namespace Panteon.Controllers
         }
         public void OppoHorizontalMove(float value)
         {
-            //if (this.gameObject.transform.position.x >= 1f)
-            //{
-                this.random = Random.Range(0, 2);
-                StartCoroutine(secondEnum());
-                positionZ = _horizontalMove.characterXClamp(transform.position.z, value);
-            //}
-            
+            this.random = Random.Range(0, 2);
+            StartCoroutine(secondEnum());
+            positionZ = _horizontalMove.characterXClamp(transform.position.z, value);      
         }
 
         public void OpponentMovementEnding()
@@ -82,11 +71,11 @@ namespace Panteon.Controllers
             {
                 if (random == 1)
                 {
-                    this.transform.Translate(Vector3.right * Time.deltaTime * 3);
+                    this.transform.Translate(Vector3.right * Time.deltaTime * 2.5f);
                 }
                 else if (random == 0)
                 {
-                    this.transform.Translate(Vector3.left * Time.deltaTime * 3);
+                    this.transform.Translate(Vector3.left * Time.deltaTime * 2.5f);
                 }
             }
         }

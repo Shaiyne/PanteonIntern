@@ -64,7 +64,6 @@
     <Compile Include="Assets\Scripts\Concretes\Movements\VerticalMove.cs" />
     <Compile Include="Assets\Scripts\Concretes\Inputs\InputReader.cs" />
     <Compile Include="Assets\Scripts\Concretes\Inputs\TouchControls.cs" />
-    <Compile Include="Assets\Scripts\Concretes\Movements\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Abstracts\Controllers\IEntityController.cs" />
     <Compile Include="Assets\Scripts\Concretes\Movements\RotatingPlatformSc.cs" />
     <Compile Include="Assets\Assets\Paintz Free\Scripts\Paint.cs" />
@@ -73,7 +72,7 @@
     <Compile Include="Assets\Scripts\Concretes\Controllers\CameraController.cs" />
     <Compile Include="Assets\Scripts\Concretes\Controllers\OpponentController.cs" />
     <Compile Include="Assets\Scripts\Concretes\Controllers\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Concretes\Controllers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Concretes\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Abstracts\Inputs\IInputReader.cs" />
     <Compile Include="Assets\Assets\Paintz Free\Demo\Scripts\PaintExample.cs" />
     <Compile Include="Assets\Scripts\Concretes\Singleton\Singleton.cs" />

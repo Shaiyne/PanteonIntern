@@ -12,6 +12,8 @@ TagManager:
   - rotatingTag
   - FinishTag
   - finishtag
+  - RotatingPlatformTag
+  - deathTag
   layers:
   - Default
   - TransparentFX

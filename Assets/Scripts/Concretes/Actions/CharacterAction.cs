@@ -17,6 +17,7 @@ namespace Panteon.Actions
         private void Awake()
         {
             anim = GetComponent<Animator>();
+            playerController = GetComponent<PlayerController>();
         }
 
         private void Update()
@@ -31,18 +32,20 @@ namespace Panteon.Actions
         {
             if (other.transform.tag == "finishtag")
             {
-                playerController = GetComponent<PlayerController>();
                 anim.SetBool("FinishBool", true);
                 GameManager.Instance.FinishGameMethod(true);
                 InputManager.Instance.OnStartTouch -= playerController.Move;
                 transform.GetChild(0).transform.GetComponent<CameraController>().enabled = true;
+            }
+            if (other.transform.tag == "deathTag")
+            {
+                LevelManager.Instance.RestartLevel();
             }
         }
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.transform.tag == "HDonut" || collision.transform.tag == "obs" || collision.transform.tag=="sobs")
             {
-                playerController = GetComponent<PlayerController>();
                 anim.SetBool("DeathBool", true);
                 InputManager.Instance.OnStartTouch -= playerController.Move;
                 playerController.VerticalMovement(0);
@@ -58,6 +61,18 @@ namespace Panteon.Actions
                 anim.SetTrigger("RotatorParam");
                 anim.SetBool("RotatorBool", true);
                 rotatorStick.StickRotationMethod(90);
+            }
+            if (collision.transform.tag == "RotatingPlatformTag")
+            {
+                if (collision.transform.GetComponent<MeshRenderer>().material.mainTextureOffset.x > 0)
+                {
+                    playerController.Move(-0.2f);
+                }
+                else
+                {
+                    playerController.Move(0.2f);
+                }
+                
             }
         }
         private void OnCollisionExit(Collision collision)
